@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Portfolio</title>
+    <script src="https://kit.fontawesome.com/65b7a1162c.js"></script>
+
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body,
+      html {
+        height: 100%;
+        width: 100%;
+        font-family: sans-serif;
+      }
+
+      body {
+        height: 100%;
+        width: 100%;
+        background-color: rgb(26, 22, 22);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 20rem;
+        width: 30rem;
+      }
+
+      .container h3 {
+        font-size: 3rem;
+        color: whitesmoke;
+      }
+
+      .container p {
+        color: whitesmoke;
+        font-size: 1.6rem;
+      }
+
+      a:active,
+      a:visited {
+        color: transparent;
+      }
+
+      .social-media {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2rem;
+        width: 5rem;
+      }
+
+      .social-media a:hover [class*='fa'] {
+        color: aquamarine;
+      }
+
+      .social-media [class*='fa'] {
+        color: whitesmoke;
+        font-size: 2rem;
+        transition: color 0.3s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <h3>kenneth. duverge.</h3>
+      <p>website under construction...</p>
+      <div class="social-media">
+        <a href="https://github.com/KDuverge">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/kenneth-duverge/">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+    </main>
+  </body>
+</html>
