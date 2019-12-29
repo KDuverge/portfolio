@@ -13,18 +13,18 @@ export const StyledNav = styled.nav`
     text-decoration: none;
     transition: all 0.2s ease;
 
+    &.active-link {
+      border-bottom: 2px solid
+        ${props =>
+          props.theme === "green" ? "var(--color-primary-green)" : "#000"};
+      font-weight: 600;
+    }
+
     &:hover {
       border-bottom: 2px solid
         ${props =>
           props.theme === "green" ? "var(--color-primary-green)" : "#000"};
     }
-  }
-
-  & .active {
-    border-bottom: 2px solid
-      ${props =>
-        props.theme === "green" ? "var(--color-primary-green)" : "#000"};
-    font-weight: 600;
   }
 `;
 
