@@ -1,9 +1,11 @@
-import React, { ReactChild } from "react";
+import React, { useContext } from "react";
 import styled, { createGlobalStyle } from "styled-components";
 
 import Nav from "../Nav/Nav";
 import Social from "../Social/Social";
 import { BottomLines, TopLines } from "../AnimatedLines/AnimatedLines";
+import Container from "../Container/Container";
+import { StateContext } from "../../lib/context";
 
 const GlobalStyle = createGlobalStyle`
   :root {
@@ -47,38 +49,45 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const InnerWindow = styled.div`
-  background-color: var(--color-grey);
+  background: ${props => props.theme.innerBackground};
+  background-image: ${props => props.theme.innerBackground};
   border-radius: 1rem;
   height: 100%;
   width: 100%;
-  border: 1px solid var(--border-grey);
+  border: 2px solid ${props => props.theme.innerBorder};
+  transition: all .5s ease;
 `;
 
 const OuterWindow = styled.div`
-  background-color: var(--color-light);
+  background-color: ${props => props.theme.outerBackground};
+  background-image: ${props => props.theme.outerBackground};
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25);
   height: 100%;
   border-radius: 1rem;
   border: 2px solid black;
   padding: 1rem;
   position: relative;
+  transition: all .5s ease;
+  overflow: hidden;
 `;
 
 interface PageBaseProps {
-  children: ReactChild;
+  children: JSX.Element[] | JSX.Element;
 }
 
 const PageBase = ({ children }: PageBaseProps) => {
+  const {theme} = useContext(StateContext);
+
   return (
     <>
       <GlobalStyle />
-      <OuterWindow>
+      <OuterWindow theme={theme}>
         <TopLines />
-        <InnerWindow>
-          <Nav theme="green" />
-          {children}
+        <InnerWindow theme={theme}>
+          <Nav theme={theme} />
+          <Container>{children}</Container>
         </InnerWindow>
-        <Social />
+        <Social theme={theme} />
         <BottomLines />
       </OuterWindow>
     </>

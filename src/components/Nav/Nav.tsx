@@ -3,31 +3,29 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 import { DispatchContext } from "../../lib/context";
+import { ThemeIF } from '../../lib/reducer';
 
 const StyledNav = styled.nav`
   display: flex;
   justify-content: flex-end;
   width: 100%;
   height: 10%;
+  transition: all .2s ease;
 
   & a {
-    color: #000;
+    color: ${props => props.theme.navColor};
     font-size: 1.6rem;
     padding: 1rem;
     text-decoration: none;
-    transition: all 0.2s ease;
+    transition: all 0.5s ease;
 
     &.active-link {
-      border-bottom: 2px solid
-        ${props =>
-          props.theme === "green" ? "var(--color-primary-green)" : "#000"};
+      border-bottom: 2px solid ${props => props.theme.navUnderline};
       font-weight: 600;
     }
 
     &:hover {
-      border-bottom: 2px solid
-        ${props =>
-          props.theme === "green" ? "var(--color-primary-green)" : "#000"};
+      border-bottom: 2px solid ${props => props.theme.navUnderline};
     }
   }
 `;
@@ -42,7 +40,7 @@ const StyledUl = styled.ul`
 `;
 
 interface NavProps {
-  theme: string;
+  theme: ThemeIF;
 }
 
 const Nav = ({ theme }: NavProps) => {

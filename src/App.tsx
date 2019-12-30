@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 
 import PageBase from "./components/PageBase/PageBase";
 
-import Home from "./views/Home";
+import { Home, About } from "./views";
 
 import { AnimationProvider } from "./lib/context";
 
@@ -13,6 +13,7 @@ const App = () => {
       <PageBase>
         <Switch>
           <Route exact path="/home" component={Home} />
+          <Route exact path="/about" component={About} />
         </Switch>
       </PageBase>
     </AnimationProvider>

@@ -31,18 +31,18 @@ const LineContainer = styled.div`
 `;
 
 const LineOne = styled.div`
-  height: 15rem;
-  transform: scaleY(${props => props.theme});
+  height: 20rem;
+  transform: translateY(${props => props.theme}rem);
 `;
 
 const LineTwo = styled.div`
-  height: 10rem;
-  transform: scaleY(${props => props.theme});
+  height: 15rem;
+  transform: translateY(${props => props.theme}rem);
 `;
 
 const LineThree = styled.div`
-  height: 20rem;
-  transform: scaleY(${props => props.theme});
+  height: 25rem;
+  transform: translateY(${props => props.theme}rem);
 `;
 
 export const TopLines = () => {
