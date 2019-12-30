@@ -1,10 +1,22 @@
 import React, { useReducer, createContext, ReactChild } from "react";
+
 import { animationReducer } from "./reducer";
 
 export const initialState = {
   1: { y: 1 },
   2: { y: 1 },
   3: { y: 1 }
+};
+
+export const themeState = {
+  light: {
+    innerBackground: "var(--color-grey)",
+    navColor: "#000"
+  },
+  dark: {
+    innerBackground: "",
+    navColor: "#fff"
+  }
 };
 
 interface AnimationProviderProps {
@@ -17,13 +29,16 @@ interface DispatchIF {
 
 export const StateContext = createContext(initialState);
 export const DispatchContext = createContext({} as DispatchIF);
+export const ThemeContext = createContext(themeState);
 
 export const AnimationProvider = ({ children }: AnimationProviderProps) => {
   const [state, dispatch] = useReducer(animationReducer, initialState);
 
   return (
-    <DispatchContext.Provider value={{ dispatch }}>
-      <StateContext.Provider value={state}>{children}</StateContext.Provider>
-    </DispatchContext.Provider>
+    <ThemeContext.Provider value={themeState}>
+      <DispatchContext.Provider value={{ dispatch }}>
+        <StateContext.Provider value={state}>{children}</StateContext.Provider>
+      </DispatchContext.Provider>
+    </ThemeContext.Provider>
   );
 };

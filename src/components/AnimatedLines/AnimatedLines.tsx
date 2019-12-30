@@ -1,8 +1,7 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 
-import { StateContext } from '../../lib/context';
-
+import { StateContext } from "../../lib/context";
 
 const LineContainer = styled.div`
   position: absolute;
@@ -27,7 +26,7 @@ const LineContainer = styled.div`
     border-top-left-radius: ${props => (props.theme !== "top" ? "1rem" : "")};
     border-top-right-radius: ${props => (props.theme !== "top" ? "1rem" : "")};
     transform-origin: top;
-    transition: transform .8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
 `;
 
@@ -48,7 +47,7 @@ const LineThree = styled.div`
 
 export const TopLines = () => {
   const state = useContext(StateContext);
-  
+
   return (
     <LineContainer theme="top">
       <LineOne theme={state[1].y} />
