@@ -55,7 +55,7 @@ const InnerWindow = styled.div`
   height: 100%;
   width: 100%;
   border: 2px solid ${props => props.theme.innerBorder};
-  transition: all .5s ease;
+  transition: all 0.5s ease;
 `;
 
 const OuterWindow = styled.div`
@@ -67,7 +67,7 @@ const OuterWindow = styled.div`
   border: 2px solid black;
   padding: 1rem;
   position: relative;
-  transition: all .5s ease;
+  transition: all 0.5s ease;
   overflow: hidden;
 `;
 
@@ -76,19 +76,19 @@ interface PageBaseProps {
 }
 
 const PageBase = ({ children }: PageBaseProps) => {
-  const {theme} = useContext(StateContext);
+  const { theme } = useContext(StateContext);
 
   return (
     <>
       <GlobalStyle />
       <OuterWindow theme={theme}>
-        <TopLines />
+        {/* <TopLines /> */}
         <InnerWindow theme={theme}>
           <Nav theme={theme} />
           <Container>{children}</Container>
         </InnerWindow>
         <Social theme={theme} />
-        <BottomLines />
+        {/* <BottomLines /> */}
       </OuterWindow>
     </>
   );

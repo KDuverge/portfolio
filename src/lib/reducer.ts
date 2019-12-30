@@ -42,25 +42,25 @@ export const animationReducer = (state: State, action: ActionType) => {
           navColor: "#000",
           navUnderline: "var(--color-primary-green)",
           socialIcons: "var(--color-primary-green)",
-          socialLine: 'var(--color-primary-gradient)',
-          innerBorder: '1px solid var(--color-grey)',
-          linkedInInnerFill: 'var(--color-light)',
+          socialLine: "var(--color-primary-gradient)",
+          innerBorder: "1px solid var(--color-grey)",
+          linkedInInnerFill: "var(--color-light)"
         }
       };
     case 2:
       return {
-        1: { y: -4 },
-        2: { y: 5 },
-        3: { y: -5 },
+        1: { y: 0.4 },
+        2: { y: 1.4 },
+        3: { y: 0.5 },
         theme: {
           outerBackground: "var(--color-primary-gradient)",
           innerBackground: "transparent",
           navColor: "var(--color-light)",
           navUnderline: "var(--color-light)",
           socialIcons: "var(--color-light)",
-          socialLine: 'var(--color-light)',
-          innerBorder: 'none',
-          linkedInInnerFill: 'var(--color-primary-blue)',
+          socialLine: "var(--color-light)",
+          innerBorder: "none",
+          linkedInInnerFill: "var(--color-primary-blue)"
         }
       };
     default:

@@ -8,7 +8,7 @@ const ImageContainer = styled.div`
   width: 28rem;
   grid-column: 3 / span 2;
   grid-row: 2 / span 2;
-  justify-self: center;
+  justify-self: start;
   position: relative;
   z-index: 5;
   box-shadow: var(--shadow);

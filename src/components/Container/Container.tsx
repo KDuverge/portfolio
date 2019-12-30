@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledContainer = styled.div`
-  height: 90rem;
+  height: 90%;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
