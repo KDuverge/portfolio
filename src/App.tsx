@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 
 import PageBase from "./components/PageBase/PageBase";
 
-import { Home, About, Skills } from "./views";
+import { Home, About, Skills, Experience } from "./views";
 
 import { AnimationProvider } from "./lib/context";
 
@@ -15,6 +15,7 @@ const App = () => {
           <Route exact path="/home" component={Home} />
           <Route exact path="/about" component={About} />
           <Route exact path="/skills" component={Skills} />
+          <Route exact path="/experience" component={Experience} />
         </Switch>
       </PageBase>
     </AnimationProvider>

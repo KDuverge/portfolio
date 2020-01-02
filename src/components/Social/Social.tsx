@@ -91,7 +91,7 @@ interface SocialProps {
 }
 
 const Social = ({ theme }: SocialProps) => {
-  console.log(theme);
+
   return (
     <SocialContainer>
       <Github width="30" fill={theme.socialIcons} />

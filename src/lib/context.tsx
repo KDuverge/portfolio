@@ -8,7 +8,7 @@ export const initialState = {
   3: { y: 0 },
   theme: {
     outerBackground: "var(--color-light)",
-    innerBackground: "var(--color-grey)",
+    innerBackground: "var(--color-primary-gradient)",
     navColor: "#000",
     navUnderline: "var(--color-primary-gradient)",
     socialIcons: "var(--color-primary-green)",

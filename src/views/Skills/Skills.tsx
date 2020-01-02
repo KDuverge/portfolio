@@ -96,6 +96,12 @@ const ToolStack = styled.div`
 const Icons = styled.img`
   width: 7rem;
   height: 7rem;
+  transform-origin: top;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: rotateX(-45deg);
+  }
 `;
 
 const Skills = () => {
