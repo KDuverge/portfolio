@@ -45,17 +45,43 @@ const Line = styled.div`
 
 const Experience = () => {
   const data = [
-    { position: "bottom", icon: PlaneTakeOff },
-    { position: "top", icon: PlaneLand },
-    { position: "bottom", icon: Code },
-    { position: "top", icon: Laptop }
+    {
+      position: "bottom",
+      icon: PlaneTakeOff,
+      company: "jetBlue Airways",
+      title: "Supervisor Ground Operations"
+    },
+    {
+      position: "top",
+      icon: PlaneLand,
+      company: "jetBlue Airways",
+      title: "Supervisor Ground Operations"
+    },
+    {
+      position: "bottom",
+      icon: Code,
+      company: "Self Taught Developer",
+      title: "Began Teaching myself how to code"
+    },
+    {
+      position: "top",
+      icon: Laptop,
+      company: "BounceX",
+      title: "Software Engineer"
+    }
   ];
 
   return (
     <ChartContainer>
       <Line className="Line">
         {data.map((num, i) => (
-          <Point key={i} position={num.position} icon={num.icon} />
+          <Point
+            key={i}
+            position={num.position}
+            icon={num.icon}
+            company={num.company}
+            title={num.title}
+          />
         ))}
       </Line>
     </ChartContainer>
