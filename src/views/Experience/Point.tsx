@@ -18,6 +18,18 @@ const bounceIn = keyframes`
 	}
 `;
 
+const fadeIn = keyframes`
+	from {
+		opacity: 0;
+		transform: translateX(-50px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+`;
+
 const StyledPoint = styled.div`
   height: 2rem;
   width: 2rem;
@@ -52,7 +64,9 @@ const Work = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
+	padding: 1rem;
+	opacity: 0;
+  animation: ${fadeIn} 0.5s ease-in;
 
   & div:last-child {
     transform: ${props => (props.theme === "bottom" ? "" : "rotateZ(180deg)")};
@@ -77,20 +91,34 @@ const Company = styled.div`
 
 interface PointProps {
   position: string;
+  icon: string;
 }
 
-const Point = ({ position }: PointProps) => {
+const ExperienceIcon = styled.img`
+  height: 9rem;
+  width: 9rem;
+  position: absolute;
+  opacity: 0;
+  transform: translateX(-50px);
+  top: ${props => (props.theme !== "bottom" ? "60px" : "-125px")};
+  animation: ${fadeIn} 0.5s ease-in forwards;
+`;
+
+const Point = ({ position, icon }: PointProps) => {
   return (
-    <StyledPoint>
-      <StyledInnerPoint />
-      <Work theme={position}>
-        <Caret />
-        <Company>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti,
-          tempora.
-        </Company>
-      </Work>
-    </StyledPoint>
+    <>
+      <StyledPoint>
+        <ExperienceIcon theme={position} src={icon} />
+        <StyledInnerPoint />
+        <Work theme={position}>
+          <Caret />
+          <Company>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti,
+            tempora.
+          </Company>
+        </Work>
+      </StyledPoint>
+    </>
   );
 };
 

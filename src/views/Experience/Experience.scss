@@ -7,4 +7,10 @@
       animation-fill-mode: forwards;
     }
   }
+
+  @for $i from 1 through 6 {
+    > div:nth-child(#{$i}) img {
+      animation-delay: #{($i * 100) + 6000}ms;
+    }
+  }
 }

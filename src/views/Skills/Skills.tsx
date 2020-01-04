@@ -93,7 +93,7 @@ const ToolStack = styled.div`
   height: 100%;
 `;
 
-const Icons = styled.img`
+export const Icon = styled.img`
   width: 7rem;
   height: 7rem;
   transform-origin: top;
@@ -110,26 +110,26 @@ const Skills = () => {
       <SkillsContainer>
         <SkillsHeader>skills.</SkillsHeader>
         <TechStack>
-          <Icons src={Html} />
-          <Icons src={Css} />
-          <Icons src={Sass} />
-          <Icons src={JS} />
-          <Icons src={Typescript} />
-          <Icons src={ReactIcon} />
-          <Icons src={Redux} />
-          <Icons src={MongoDB} />
-          <Icons src={MySQL} />
-          <Icons src={NodeJS} />
-          <Icons src={Python} />
-          <Icons src={GraphQL} />
+          <Icon src={Html} />
+          <Icon src={Css} />
+          <Icon src={Sass} />
+          <Icon src={JS} />
+          <Icon src={Typescript} />
+          <Icon src={ReactIcon} />
+          <Icon src={Redux} />
+          <Icon src={MongoDB} />
+          <Icon src={MySQL} />
+          <Icon src={NodeJS} />
+          <Icon src={Python} />
+          <Icon src={GraphQL} />
         </TechStack>
       </SkillsContainer>
       <ToolsContainer>
         <ToolStack>
-          <Icons src={Webpack} />
-          <Icons src={Git} />
-          <Icons src={Github} />
-          <Icons src={Gitlab} />
+          <Icon src={Webpack} />
+          <Icon src={Git} />
+          <Icon src={Github} />
+          <Icon src={Gitlab} />
         </ToolStack>
         <ToolsHeader>tooling.</ToolsHeader>
       </ToolsContainer>

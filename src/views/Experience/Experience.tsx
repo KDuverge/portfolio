@@ -2,6 +2,10 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 
 import Point from "./Point";
+import PlaneTakeOff from "../../icons/plane-takeoff.svg";
+import PlaneLand from "../../icons/plane-land.svg";
+import Code from "../../icons/code.svg";
+import Laptop from "../../icons/laptop.svg";
 
 import "./Experience.scss";
 
@@ -40,19 +44,18 @@ const Line = styled.div`
 `;
 
 const Experience = () => {
-	const data = [
-		{position: 'bottom'},
-		{position: 'top'},
-		{position: 'bottom'},
-		{position: 'top'},
-		{position: 'bottom'},
-		{position: 'top'},
-	]
+  const data = [
+    { position: "bottom", icon: PlaneTakeOff },
+    { position: "top", icon: PlaneLand },
+    { position: "bottom", icon: Code },
+    { position: "top", icon: Laptop }
+  ];
+
   return (
     <ChartContainer>
       <Line className="Line">
         {data.map((num, i) => (
-          <Point key={i} position={num.position} />
+          <Point key={i} position={num.position} icon={num.icon} />
         ))}
       </Line>
     </ChartContainer>
