@@ -10,13 +10,13 @@
 
   @for $i from 1 through 6 {
     > div:nth-child(#{$i}) img {
-      animation-delay: #{($i * 100) + 6000}ms;
+      animation-delay: #{($i * 300) + 5000}ms;
     }
   }
 
   @for $i from 1 through 6 {
     > div:nth-child(#{$i}) > div {
-      animation-delay: #{($i * 100) + 6000}ms;
+      animation-delay: #{($i * 300) + 5000}ms;
     }
   }
 }

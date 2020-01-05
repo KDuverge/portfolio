@@ -3,7 +3,7 @@ import styled, { createGlobalStyle } from "styled-components";
 
 import Nav from "../Nav/Nav";
 import Social from "../Social/Social";
-import { TopLines } from "../AnimatedLines/AnimatedLines";
+import { BottomLines } from "../AnimatedLines/AnimatedLines";
 import Container from "../Container/Container";
 import { StateContext } from "../../lib/context";
 
@@ -82,13 +82,12 @@ const PageBase = ({ children }: PageBaseProps) => {
     <>
       <GlobalStyle />
       <OuterWindow theme={theme}>
-        <TopLines />
+        <BottomLines />
         <InnerWindow theme={theme}>
           <Nav theme={theme} />
           <Container>{children}</Container>
         </InnerWindow>
         <Social theme={theme} />
-        {/* <BottomLines /> */}
       </OuterWindow>
     </>
   );

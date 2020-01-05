@@ -25,7 +25,7 @@ const LineContainer = styled.div`
       props.theme === "top" ? "1rem" : ""};
     border-top-left-radius: ${props => (props.theme !== "top" ? "1rem" : "")};
     border-top-right-radius: ${props => (props.theme !== "top" ? "1rem" : "")};
-    transform-origin: top;
+    transform-origin: bottom;
     transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
 `;
@@ -45,11 +45,11 @@ const LineThree = styled.div`
   transform: scaleY(${props => props.theme});
 `;
 
-export const TopLines = () => {
+export const BottomLines = () => {
   const state = useContext(StateContext);
 
   return (
-    <LineContainer theme="top">
+    <LineContainer>
       <LineOne theme={state[1].y} />
       <LineTwo theme={state[2].y} />
       <LineThree theme={state[3].y} />
@@ -57,13 +57,3 @@ export const TopLines = () => {
   );
 };
 
-export const BottomLines = () => {
-  const state = useContext(StateContext);
-
-  return (
-    <LineContainer>
-      <LineTwo theme={state[2].y} />
-      <LineThree theme={state[3].y} />
-    </LineContainer>
-  );
-};

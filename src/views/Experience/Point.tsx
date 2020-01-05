@@ -60,16 +60,20 @@ const StyledInnerPoint = styled.span`
   background: var(--color-primary-blue);
 `;
 
-const Work = styled.div`
+interface WorkProps {
+  position?: string | false;
+}
+
+const Work = styled.div<WorkProps>`
   height: 10rem;
   width: 15rem;
   border-radius: 1rem;
   background: var(--color-light);
   position: absolute;
-  top: ${props => (props.theme === "bottom" ? "4rem" : "-12rem")};
+  top: ${props => (props.position === "bottom" ? "4rem" : "-12rem")};
   left: 50%;
   transform: translateX(-50%)
-    ${props => (props.theme === "bottom" ? "" : "rotateZ(180deg)")};
+    ${props => (props.position === "bottom" ? "" : "rotateZ(180deg)")};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -79,55 +83,72 @@ const Work = styled.div`
   animation: ${fadeWorkIn} 0.5s ease-in forwards;
 
   & div:last-child {
-		transform: ${props => (props.theme === "bottom" ? "" : "rotateZ(180deg)")};
-		width: 100%;
+    transform: ${props =>
+      props.position === "bottom" ? "" : "rotateZ(180deg)"};
+    width: 100%;
   }
 `;
 
 const Caret = styled.div`
   background: var(--color-light);
   height: 2rem;
-  width: 5rem;
+  width: 2rem;
   transform: rotate(45deg) translateX(-50%);
-  border-radius: 0.6rem;
+  border-radius: 0.4rem;
   position: relative;
-  bottom: 0;
+  bottom: 0.9rem;
   align-self: baseline;
   left: 50%;
 `;
 
 const Company = styled.div`
   align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
 `;
 
 interface PointProps {
-  position: string;
+  position: string | false;
   icon: string;
   company: string;
   title: string;
+  time: string;
 }
 
-const ExperienceIcon = styled.img`
+interface IconProps {
+  position?: string | false;
+}
+
+const ExperienceIcon = styled.img<IconProps>`
   height: 9rem;
   width: 9rem;
   position: absolute;
   opacity: 0;
   transform: translateX(-50px);
-  top: ${props => (props.theme !== "bottom" ? "60px" : "-125px")};
+  top: ${props => (props.position !== "bottom" ? "60px" : "-125px")};
   animation: ${fadeIn} 0.5s ease-in forwards;
 `;
 
-const Point = ({ position, icon, title, company }: PointProps) => {
+const Point = ({ position, icon, title, company, time }: PointProps) => {
   return (
     <>
       <StyledPoint>
-        <ExperienceIcon theme={position} src={icon} />
+        <ExperienceIcon position={position} src={icon} />
         <StyledInnerPoint />
-        <Work theme={position}>
+        <Work position={position}>
           <Caret />
           <Company>
-            <strong style={{ display: "block" }}>{company}</strong>
+            <strong style={{ display: "block", fontSize: "1.2rem" }}>
+              {company}
+            </strong>
             {title}
+            <strong
+              style={{ display: "block", fontSize: "1rem", textAlign: "right" }}
+            >
+              {time}
+            </strong>
           </Company>
         </Work>
       </StyledPoint>

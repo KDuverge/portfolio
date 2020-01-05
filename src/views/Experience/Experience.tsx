@@ -8,6 +8,7 @@ import Code from "../../icons/code.svg";
 import Laptop from "../../icons/laptop.svg";
 
 import "./Experience.scss";
+import PageTitle from "../../components/PageTitle/PageTitle";
 
 const ChartContainer = styled.div`
   grid-column: 2 / -2;
@@ -46,45 +47,42 @@ const Line = styled.div`
 const Experience = () => {
   const data = [
     {
-      position: "bottom",
       icon: PlaneTakeOff,
       company: "jetBlue Airways",
-      title: "Supervisor Ground Operations"
+      title: "Supervisor Ground Operations",
+      time: "April / 2010"
     },
     {
-      position: "top",
       icon: PlaneLand,
       company: "jetBlue Airways",
-      title: "Supervisor Ground Operations"
+      title: "Supervisor Ground Operations",
+      time: "April / 2017"
     },
     {
-      position: "bottom",
       icon: Code,
       company: "Self Taught Developer",
-      title: "Began Teaching myself how to code"
+      title: "Began Teaching myself how to code",
+      time: "November / 2017"
     },
     {
-      position: "top",
       icon: Laptop,
       company: "BounceX",
-      title: "Software Engineer"
+      title: "Software Engineer",
+      time: "June / 2018 - Present"
     }
   ];
 
   return (
-    <ChartContainer>
-      <Line className="Line">
-        {data.map((num, i) => (
-          <Point
-            key={i}
-            position={num.position}
-            icon={num.icon}
-            company={num.company}
-            title={num.title}
-          />
-        ))}
-      </Line>
-    </ChartContainer>
+    <>
+      <PageTitle title="experience." color="var(--color-light)" />
+      <ChartContainer>
+        <Line className="Line">
+          {data.map((num, i) => (
+            <Point key={i} position={i % 2 === 0 && "bottom"} {...num} />
+          ))}
+        </Line>
+      </ChartContainer>
+    </>
   );
 };
 
