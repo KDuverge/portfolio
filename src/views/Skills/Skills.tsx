@@ -1,22 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import Css from "../../icons/css.svg";
-import Git from "../../icons/git.svg";
-import Github from "../../icons/github.svg";
-import Gitlab from "../../icons/gitlab.svg";
-import Html from "../../icons/html.svg";
-import JS from "../../icons/js.svg";
-import MongoDB from "../../icons/mongodb.svg";
-import MySQL from "../../icons/mysql.svg";
-import NodeJS from "../../icons/nodejs.svg";
-import Python from "../../icons/python.svg";
-import ReactIcon from "../../icons/react.svg";
-import Redux from "../../icons/redux.svg";
-import Sass from "../../icons/sass.svg";
-import Typescript from "../../icons/typescript.svg";
-import GraphQL from "../../icons/graphql.svg";
-import Webpack from "../../icons/webpack.svg";
+import Icon from "../../components/Icons/Icons";
 
 const SkillsContainer = styled.div`
   grid-column: 2 / span 3;
@@ -93,43 +78,32 @@ const ToolStack = styled.div`
   height: 100%;
 `;
 
-export const Icon = styled.img`
-  width: 7rem;
-  height: 7rem;
-  transform-origin: top;
-  transition: transform 0.2s ease;
-
-  &:hover {
-    transform: rotateX(-45deg);
-  }
-`;
-
 const Skills = () => {
   return (
     <>
       <SkillsContainer>
         <SkillsHeader>skills.</SkillsHeader>
         <TechStack>
-          <Icon src={Html} />
-          <Icon src={Css} />
-          <Icon src={Sass} />
-          <Icon src={JS} />
-          <Icon src={Typescript} />
-          <Icon src={ReactIcon} />
-          <Icon src={Redux} />
-          <Icon src={MongoDB} />
-          <Icon src={MySQL} />
-          <Icon src={NodeJS} />
-          <Icon src={Python} />
-          <Icon src={GraphQL} />
+          <Icon src="html" />
+          <Icon src="css" />
+          <Icon src="sass" />
+          <Icon src="js" />
+          <Icon src="typescript" />
+          <Icon src="reactIcon" />
+          <Icon src="redux" />
+          <Icon src="mongoDb" />
+          <Icon src="mySql" />
+          <Icon src="nodeJs" />
+          <Icon src="python" />
+          <Icon src="graphQl" />
         </TechStack>
       </SkillsContainer>
       <ToolsContainer>
         <ToolStack>
-          <Icon src={Webpack} />
-          <Icon src={Git} />
-          <Icon src={Github} />
-          <Icon src={Gitlab} />
+          <Icon src="webpack" />
+          <Icon src="git" />
+          <Icon src="github" />
+          <Icon src="gitlab" />
         </ToolStack>
         <ToolsHeader>tooling.</ToolsHeader>
       </ToolsContainer>

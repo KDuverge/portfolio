@@ -1,18 +1,31 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 import Carousel, { Dots } from "@brainhubeu/react-carousel";
+import styled from 'styled-components';
 
-const Project = styled.div`
-  height: 40rem;
-  width: 25rem;
-  background-color: white;
-  border: 1px solid black;
-  margin-right: 5rem;
+import Single from "./Single";
+import { ProjectType } from "./Projects";
+import { SmallIcon } from "../../components/Icons/Icons";
+
+interface ProjectSliderProps {
+  data: ProjectType[] | null;
+}
+
+const NoProjects = styled.div`
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-primary-green);
+  font-size: 4rem;
+  font-weight: bold;
 `;
 
-const ProjectSlider = () => {
+const ProjectSlider = ({ data }: ProjectSliderProps) => {
   const [dots, setDots] = useState(0);
 
+  if (!data) {
+    return <NoProjects>No Projects currently...</NoProjects>;
+  }
   return (
     <>
       <Carousel
@@ -22,13 +35,15 @@ const ProjectSlider = () => {
         infinite
         arrows
         slidesPerPage={2}
+        arrowLeft={<SmallIcon src="leftArrow" />}
+        arrowRight={<SmallIcon src="rightArrow" />}
+        addArrowClickHandler
       >
-        <Project>1</Project>
-        <Project>2</Project>
-        <Project>3</Project>
-        <Project>4</Project>
+        {data.map((single, i) => (
+          <Single key={i} {...single} />
+        ))}
       </Carousel>
-      <Dots value={dots} onChange={setDots} number={4} />
+      <Dots value={dots} onChange={setDots} number={data.length} />
     </>
   );
 };

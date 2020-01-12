@@ -17,7 +17,7 @@ const StyledPageTitle = styled.div`
   grid-column: 4 / span 2;
   grid-row: 1 / 1;
   justify-self: center;
-  align-self: center;
+  align-self: start;
   font-size: 2.4rem;
   color: ${props => props.color};
   position: relative;

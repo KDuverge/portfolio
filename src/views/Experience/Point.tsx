@@ -1,6 +1,8 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 
+import { LargeIcon } from "../../components/Icons/Icons";
+
 const bounceIn = keyframes`
 	0% {
 		opacity: 0;
@@ -15,18 +17,6 @@ const bounceIn = keyframes`
 	100% {
 		opacity: 1;
 		transform: scale(1)
-	}
-`;
-
-const fadeIn = keyframes`
-	from {
-		opacity: 0;
-		transform: translateX(-50px);
-	}
-
-	to {
-		opacity: 1;
-		transform: translateX(0);
 	}
 `;
 
@@ -117,25 +107,11 @@ interface PointProps {
   time: string;
 }
 
-interface IconProps {
-  position?: string | false;
-}
-
-const ExperienceIcon = styled.img<IconProps>`
-  height: 9rem;
-  width: 9rem;
-  position: absolute;
-  opacity: 0;
-  transform: translateX(-50px);
-  top: ${props => (props.position !== "bottom" ? "60px" : "-125px")};
-  animation: ${fadeIn} 0.5s ease-in forwards;
-`;
-
 const Point = ({ position, icon, title, company, time }: PointProps) => {
   return (
     <>
       <StyledPoint>
-        <ExperienceIcon position={position} src={icon} />
+        <LargeIcon position={position} src={icon} />
         <StyledInnerPoint />
         <Work position={position}>
           <Caret />

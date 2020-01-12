@@ -1,0 +1,21 @@
+li:not([class*="--active"]) {
+  transform: scale(0.8);
+  opacity: 0.5;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.BrainhubCarousel__dots {
+  margin-top: 2rem;
+}
+
+.BrainhubCarousel__customArrows {
+  cursor: pointer;
+}
+
+.BrainhubCarousel__custom-arrowRight {
+  margin-left: 2rem;
+}
+
+.BrainhubCarousel__custom-arrowLeft {
+  margin-right: 2rem;
+}

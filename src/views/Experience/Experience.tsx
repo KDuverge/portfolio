@@ -1,14 +1,10 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 
+import PageTitle from "../../components/PageTitle/PageTitle";
 import Point from "./Point";
-import PlaneTakeOff from "../../icons/plane-takeoff.svg";
-import PlaneLand from "../../icons/plane-land.svg";
-import Code from "../../icons/code.svg";
-import Laptop from "../../icons/laptop.svg";
 
 import "./Experience.scss";
-import PageTitle from "../../components/PageTitle/PageTitle";
 
 const ChartContainer = styled.div`
   grid-column: 2 / -2;
@@ -47,25 +43,25 @@ const Line = styled.div`
 const Experience = () => {
   const data = [
     {
-      icon: PlaneTakeOff,
+      icon: 'planeOff',
       company: "jetBlue Airways",
       title: "Supervisor Ground Operations",
       time: "April / 2010"
     },
     {
-      icon: PlaneLand,
+      icon: 'planeLand',
       company: "jetBlue Airways",
       title: "Supervisor Ground Operations",
       time: "April / 2017"
     },
     {
-      icon: Code,
+      icon: 'code',
       company: "Self Taught Developer",
       title: "Began Teaching myself how to code",
       time: "November / 2017"
     },
     {
-      icon: Laptop,
+      icon: 'laptop',
       company: "BounceX",
       title: "Software Engineer",
       time: "June / 2018 - Present"
@@ -77,8 +73,8 @@ const Experience = () => {
       <PageTitle title="experience." color="var(--color-light)" />
       <ChartContainer>
         <Line className="Line">
-          {data.map((num, i) => (
-            <Point key={i} position={i % 2 === 0 && "bottom"} {...num} />
+          {data.map((job, i) => (
+            <Point key={i} position={i % 2 === 0 && "bottom"} {...job} />
           ))}
         </Line>
       </ChartContainer>
