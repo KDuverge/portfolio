@@ -8,13 +8,13 @@ export const initialState = {
   3: { y: 0 },
   theme: {
     outerBackground: "var(--color-light)",
-    innerBackground: "var(--color-primary-gradient)",
+    innerBackground: "var(--color-grey)",
     navColor: "#000",
-    navUnderline: "var(--color-primary-gradient)",
+    navUnderline: "var(--color-primary-green)",
     socialIcons: "var(--color-primary-green)",
-    socialLine: 'var(--color-primary-gradient)',
-    linkedInInnerFill: 'var(--color-light)',
-    innerBorder: 'var(--color-grey)',
+    socialLine: "var(--color-primary-gradient)",
+    innerBorder: "1px solid var(--color-grey)",
+    linkedInInnerFill: "var(--color-light)"
   }
 };
 

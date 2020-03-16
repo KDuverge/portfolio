@@ -30,8 +30,10 @@ interface State {
 }
 
 export const animationReducer = (state: State, action: ActionType) => {
+  console.log(state)
   switch (action.type) {
     case 1:
+      console.log('Case 1')
       return {
         1: { y: 0 },
         2: { y: 0 },
@@ -48,6 +50,7 @@ export const animationReducer = (state: State, action: ActionType) => {
         }
       };
     case 2:
+      console.log('Case 2')
       return {
         1: { y: 0.4 },
         2: { y: 1.4 },

@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 
 import PageBase from "./components/PageBase/PageBase";
 
@@ -12,11 +12,14 @@ const App = () => {
     <AnimationProvider>
       <PageBase>
         <Switch>
-          <Route exact path="/home" component={Home} />
-          <Route path="/about" component={About} />
-          <Route path="/skills" component={Skills} />
-          <Route path="/experience" component={Experience} />
-          <Route path="/projects" component={Projects} />
+          <Route exact path='/'>
+            <Redirect to='/home' />
+          </Route>
+          <Route exact path='/home' component={Home} />
+          <Route path='/about' component={About} />
+          <Route path='/skills' component={Skills} />
+          <Route path='/experience' component={Experience} />
+          <Route path='/projects' component={Projects} />
         </Switch>
       </PageBase>
     </AnimationProvider>

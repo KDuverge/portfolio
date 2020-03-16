@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-import Me from "../../images/KLove.jpg";
+import Me from "../../images/Kenneth.jpg";
 
 const ImageContainer = styled.div`
   height: 30rem;
-  width: 28rem;
+  width: 30rem;
   grid-column: 3 / span 2;
   grid-row: 2 / span 2;
   justify-self: start;

@@ -1,23 +1,39 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { ProjectType } from "./Projects";
-import { SmallIcon } from "../../components/Icons/Icons";
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+`;
 
 const SingleContainer = styled.div`
-  height: 50rem;
-  width: 30rem;
+  height: 30rem;
   background-image: var(--color-primary-gradient);
-  padding: 2rem 1rem;
+  align-self: flex-end;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 1rem;
   box-shadow: var(--shadow);
+  transition: all 2s ease;
+  animation: ${fadeIn} 1s ease-in forwards;
+  animation-delay: ${props => props.theme}99ms;
+  opacity: 0;
+
+  &:hover {
+    transform: rotateY(180deg);
+    box-shadow: none;
+  }
 `;
 
 const SingleImageContainer = styled.div`
-  width: 27rem;
-  height: 18rem;
+  width: 100%;
+  height: 100%;
   background-color: white;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
@@ -28,78 +44,12 @@ const SingleImageContainer = styled.div`
   }
 `;
 
-const SingleTitleContainer = styled.div`
-  height: 5rem;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 1.6rem;
-  color: var(--color-light);
-  font-weight: bold;
-`;
-
-const SingleLinksContainer = styled.div`
-  width: 10rem;
-  height: 5rem;
-  display: flex;
-  font-size: 1.2rem;
-  align-items: center;
-  justify-content: space-evenly;
-`;
-
-const SingleDescriptionContainer = styled.div`
-  font-size: 1.5rem;
-  color: white;
-  height: 10rem;
-  width: 100%;
-  display: flex;
-  align-items: center;
-`;
-
-const SingleStackContainer = styled.div`
-  height: 15rem;
-  width: 100%;
-  display: flex;
-  align-items: flex-start;
-  flex-wrap: wrap;
-
-  & > * {
-    margin-right: 3rem;
-    align-self: baseline;
-  }
-`;
-
-const Single = ({
-  title,
-  description,
-  githubLink,
-  websiteLink,
-  stack,
-  image
-}: ProjectType) => {
+const Single = ({ title, image, _id }: ProjectType) => {
   return (
-    <SingleContainer>
+    <SingleContainer theme={_id}>
       <SingleImageContainer>
         <img src={image} alt={title} />
       </SingleImageContainer>
-      <SingleTitleContainer>
-        {title}
-        <SingleLinksContainer>
-          <a href={githubLink} target="_blank" rel="noopener noreferrer">
-            <SmallIcon src="github" />
-          </a>
-          <a href={websiteLink} target="_blank" rel="noopener noreferrer">
-            <SmallIcon src="code" />
-          </a>
-        </SingleLinksContainer>
-      </SingleTitleContainer>
-      <SingleDescriptionContainer>{description}</SingleDescriptionContainer>
-      <SingleStackContainer>
-        {stack.map((s, i) => (
-          <SmallIcon key={i} src={s} />
-        ))}
-      </SingleStackContainer>
     </SingleContainer>
   );
 };

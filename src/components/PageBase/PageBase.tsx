@@ -77,7 +77,7 @@ interface PageBaseProps {
 
 const PageBase = ({ children }: PageBaseProps) => {
   const { theme } = useContext(StateContext);
-
+  console.log(theme);
   return (
     <>
       <GlobalStyle />
